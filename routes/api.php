@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MovieController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
@@ -26,6 +27,8 @@ Route::middleware('auth:sanctum')->group(
 		Route::post('/add-email', [UserController::class, 'addNewEmail']);
 		Route::get('/make-primary/{id}', [UserController::class, 'makeEmailPrimary']);
 		Route::get('/delete-email/{id}', [UserController::class, 'deleteEmail']);
+		Route::get('/movies', [MovieController::class, 'getMovies']);
+		Route::post('/add-movie', [MovieController::class, 'addMovie']);
 	}
 );
 
